@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #1F2833;
+  --secondary-color: #45A29E;
+  --accent-color: #66FCF1;
+
+  --dark-primary-color: #0B0C10;
+  --dark-secondary-color: #1F2833;
+  --dark-accent-color: #66FCF1;
+}
+
 .App {
   text-align: center;
 }
@@ -35,6 +45,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h6, h5, h3, h2, h1, label, span, p {
+  color: #FFFFFF;
 }
 
 .root-container {
@@ -79,11 +93,17 @@
   }
 }
 
+.title, h4 {
+  color: var(--accent-color)
+}
+
 .header {
   height: 60px;
   display: flex;
   padding-left: 12px;
   padding-right: 12px;
+
+  background: var(--primary-color);
 }
 
 .title-header {
@@ -106,6 +126,8 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   display: flex;
   flex-direction: column;
+
+  background: var(--secondary-color);
 }
 
 .top-left-container {
@@ -122,6 +144,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--primary-color);
 }
 
 .top-fibonacci {
@@ -200,11 +223,11 @@ input[type=number] {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--accent-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--accent-color);
 }
 
 input:checked + .slider:before {
@@ -219,4 +242,18 @@ input:checked + .slider:before {
 
 .slider.rounded:before {
   border-radius: 50%;
+}
+
+.fa {
+  font-size: 28px;
+  margin-right: 16px;
+  color: var(--accent-color)
+}
+
+.dark-primary {
+  background: var(--dark-primary-color) !important;
+}
+
+.dark-secondary {
+  background: var(--dark-secondary-color) !important;
 }
