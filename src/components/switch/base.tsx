@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
-const SwitchBase = () => (
+const SwitchBase = (
+  props: InputHTMLAttributes<HTMLInputElement>
+) => (
   <label className='switch'>
-    <input type="checkbox" />
+    <input
+      { ...props }
+      type='checkbox' />
     <span className='slider rounded'/>
   </label>
 );
