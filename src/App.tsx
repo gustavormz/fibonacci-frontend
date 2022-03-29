@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import ContainerRoot from './components/container/root';
+import Header from './components/header';
+import ContainerBase from './components/container/base';
+import Fibonacci from './components/fibonacci';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <ContainerRoot>
+      <Header />
+      <ContainerBase>
+        <div className='top-left-container'>
+          <Fibonacci />
+        </div>
+        <div className='bottom-right-container'>
+          <h1 className='title'>Calculate Fibonacci!</h1>
+        </div>
+      </ContainerBase>
+    </ContainerRoot>
+  ); 
+};
 
 export default App;
