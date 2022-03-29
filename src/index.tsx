@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import StateProvider from './context/store/fibonacci';
+import { AppContextProvider as StateProvider } from './context/store/index';
 
 ReactDOM.render(
   <React.StrictMode>
