@@ -6,20 +6,18 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --verbose ./test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +37,31 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.11",
+    "@types/jest": "^27.4.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^27.5.1",
+    "raf": "^3.4.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "setupFiles": [
+      "raf/polyfill"
+    ],
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.ts",
+    "snapshotSerializers": ["enzyme-to-json"]
   }
 }
