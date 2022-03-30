@@ -1,7 +1,8 @@
 import React, {
   Dispatch,
   useReducer,
-  createContext
+  createContext,
+  useContext
 } from 'react';
 
 import {
@@ -18,6 +19,8 @@ interface IContextProps {
 };
 
 export const Store = createContext({} as IContextProps);
+
+export const useAppContext = () => useContext(Store);
 
 const State = (props: any) => {
   const [state, dispatch] = useReducer(reducer, initialState);

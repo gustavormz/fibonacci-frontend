@@ -1,13 +1,12 @@
-import React, { useContext, ChangeEvent } from 'react';
-import '../App.css';
+import React, { ChangeEvent } from 'react';
 
 import SwitchBase from './switch/base';
 
-import { Store as ThemeStore} from '../context/store/theme';
+import { useAppContext as useThemeContext } from '../context/store/theme';
 import { Types } from '../context/reducer/theme';
 
 const Header = () => {
-  const { state, dispatch } = useContext(ThemeStore);
+  const { state, dispatch } = useThemeContext();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch({

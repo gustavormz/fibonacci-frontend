@@ -1,5 +1,4 @@
 import React, {
-  useContext,
   ChangeEvent
 } from 'react';
 
@@ -7,12 +6,12 @@ import ContainerFibonacci from './container/fibonacci';
 import InputBase from './input/base';
 import Result from './result';
 
-import { Store as FibonacciStore} from '../context/store/fibonacci';
+import { useAppContext as useFibonacciContext } from '../context/store/fibonacci';
 import { Types } from '../context/reducer/fibonacci';
 import Api from '../api';
 
 const Fibonacci = () => {
-  const { state, dispatch } = useContext(FibonacciStore);
+  const { state, dispatch } = useFibonacciContext();
 
   const handleOnChange = async (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
